@@ -8,7 +8,6 @@ Note: Mock recipe shown for a frontend demo. The backend is not deployed publicl
 
 ![Demo](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3Vpams0dmRsZG5kcDNwOW44b3VtZGFnc2FhOGVkemZ2aGEyancwMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Z3J0M6lWZHvKfhT5Ty/giphy.gif)
 
-
 ## Tech Stack
 
 - **Frontend:** React, TailwindCSS, react-markdown, tailwindcss-typography
