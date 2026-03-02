@@ -1,12 +1,14 @@
 import React from "react"
-import Recipe from "./Recipe"
-import IngredientsList from "./IngredientsList"
+import Recipe from "./components/Recipe"
+import IngredientsList from "./components/IngredientsList"
 import { getRecipeFromDeepSeek } from "./ai"
 
-export default function Form() {
+export default function MainContent() {
     const [ingredients, setIngredients] = React.useState([])
     const [recipe, setRecipe] = React.useState("")
     const [loading, setLoading] = React.useState(false)
+
+    const isProduction = import.meta.env.PROD;
 
     function addIngredient(formData) {
         const newIngredient = formData.get("ingredient")
@@ -17,8 +19,18 @@ export default function Form() {
         setLoading(true)
         setRecipe("")
         try {
+            //for production
+            if (isProduction) {
+                const response = await fetch(`${import.meta.env.BASE_URL}mockDemo.md`)
+                const mockRecipe = await response.text()
+                setRecipe(mockRecipe);
+                return;
+            }
+            //for dev
             const generatedRecipe = await getRecipeFromDeepSeek(ingredients);
             setRecipe(generatedRecipe);
+        } catch (error) {
+            console.error("Error generating recipe: ", error);
         } finally {
             setLoading(false)
         }
