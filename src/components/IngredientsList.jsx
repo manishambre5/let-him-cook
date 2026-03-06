@@ -5,7 +5,7 @@ export default function IngredientsList(props){
     ))
 
     return(
-        <section className="flex flex-col gap-4 justify-start w-full sm:w-2/3" aria-live="polite">
+        <section className="flex flex-col gap-4 justify-start w-full lg:w-2/3" aria-live="polite">
             <p className="text-4xl text-left uppercase">ingredient list:</p>
             <ul className="mx-10 list-decimal">
                 {ingredientsListItems}

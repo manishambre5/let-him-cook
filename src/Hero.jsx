@@ -1,9 +1,10 @@
 import React from "react"
 import Recipe from "./components/Recipe"
 import IngredientsList from "./components/IngredientsList"
+import GettingStarted from "./components/GettingStarted"
 import { getRecipeFromDeepSeek } from "./ai"
 
-export default function MainContent() {
+export default function Hero() {
     const [ingredients, setIngredients] = React.useState([])
     const [recipe, setRecipe] = React.useState("")
     const [loading, setLoading] = React.useState(false)
@@ -47,6 +48,9 @@ export default function MainContent() {
 
             {/* Display list of Ingredients */}
             {ingredients.length > 0 && <IngredientsList ingredients={ingredients} toggleGenerateRecipe={toggleGenerateRecipe} loading={loading} /> }
+            
+            {/* Getting Started section (Empty State) */}
+            {ingredients.length < 3 && <GettingStarted ingredients={ingredients} />}
 
             {/* Display recipe section */}
             {recipe && <Recipe recipe={recipe} /> }

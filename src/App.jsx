@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Header from './components/Header'
-import MainContent from './MainContent'
+import Hero from './Hero'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Header />
-      <MainContent />
+      <Hero />
     </>
   )
 }
